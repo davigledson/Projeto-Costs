@@ -1,21 +1,66 @@
 {
-    "projects":[],
-    "categories":[
-        {
-            "id":1,
-            "name":"Infra"
-        },
-        {
-            "id":2,
-            "name":"Desenvolvimento"
-        },
-        {
-            "id":3,
-            "name":"Design"
-        },
-        {
-            "id":4,
-            "name":"Planejamento"
-        }
-    ]
+  "projects": [
+    {
+      "name": "Davi Gledson da Silva Benedito",
+      "budget": "1234",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 1
+    },
+    {
+      "name": "Davi Gledson da Silva Benedito",
+      "budget": "1234",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 2
+    },
+    {
+      "name": "amazon",
+      "budget": "1234",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 3
+    },
+    {
+      "name": "tripadivisordavi.erdplus",
+      "budget": "456",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Infra"
+    },
+    {
+      "id": 2,
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": 3,
+      "name": "Design"
+    },
+    {
+      "id": 4,
+      "name": "Planejamento"
+    }
+  ]
 }
