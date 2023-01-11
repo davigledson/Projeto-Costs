@@ -164,6 +164,17 @@
       "cost": 0,
       "services": [],
       "id": 15
+    },
+    {
+      "name": "teste3000",
+      "budget": "3333",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 16
     }
   ],
   "categories": [
