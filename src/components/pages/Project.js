@@ -3,13 +3,14 @@ import { useParams } from 'react-router-dom'
 import { useState,useEffect } from 'react'
 import Loading from '../layout/Loading'
 import Container from '../layout/Container'
-
+import ProjectForm from '../project/ProjectForm'
 import styles from './Project.module.css'
 
 function Project(){
     const {id} =useParams()
+
     const [project, setProject] = useState([])
-    const [showProjectForm,setShowProjectForm] = useState(false)
+    const [showProjectForm, setShowProjectForm] = useState(false)
 
 
     useEffect(()=>{
@@ -20,7 +21,7 @@ function Project(){
                 'Content-Type':'application/json',
             },
         })
-        .then(resp => resp.json())
+        .then((resp) => resp.json())
         .then((data) => {
             setProject(data)
         })
@@ -28,6 +29,10 @@ function Project(){
         }, 300)
     }, [id])
 
+    function editPost(project){
+        console.log(project)
+
+    }
         function toggleProjectForm(){
             setShowProjectForm(!showProjectForm)
 
@@ -49,7 +54,7 @@ function Project(){
                                    <span>Categoria:</span> {project.category.name} 
                                 </p>
                                 <p>
-                                   <span>Ttotal de Orçamento:</span> R${project.budget} 
+                                   <span>Total de Orçamento:</span> R${project.budget} 
                                 </p>
                                 <p>
                                    <span>Total Utilizado:</span> R${project.cost} 
@@ -58,7 +63,7 @@ function Project(){
                             </div>
                         ) : (
                             <div className={styles.project_info}>
-                                <p>form</p>
+                                <ProjectForm handleSubmit={editPost} btnText='Concluir edição' projectData={project}/>
                             </div>
                         )}
                     </div>

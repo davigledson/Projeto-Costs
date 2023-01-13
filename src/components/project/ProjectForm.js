@@ -5,15 +5,15 @@ import styles from './ProjectForm.module.css'
 
 import { useEffect, useState } from 'react'
 
-function ProjectForm({btnText, handleSubmit, projectData}){
+function ProjectForm({ handleSubmit, btnText, projectData}) {
     const [categories, setCategories] =useState([])
-    const [project,setProject] =useState(projectData || [])
+    const [project, setProject] =useState(projectData || {})
 
     useEffect(() => {
         fetch("http://localhost:5000/categories",{
         method:'GET',
-        headers:{
-            'Content-type':'application.json'
+        headers: {
+            'Content-Type':'application.json'
         }
         
     })
@@ -24,14 +24,14 @@ function ProjectForm({btnText, handleSubmit, projectData}){
     .catch((err)=> console.log(err))
     }, [])
 
-    const submit=(e)=>{
+    const submit= (e) =>{
         e.preventDefault()
         //console.log(project)
         handleSubmit(project)
 
     }
     function handleChange(e){
-        setProject({...project,[e.target.name]:e.target.value})
+        setProject({ ...project,[e.target.name]: e.target.value})
      
     }
     function handleCategory(e){
