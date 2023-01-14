@@ -1,8 +1,8 @@
 {
   "projects": [
     {
-      "name": "tripadivisordavi.erdplus",
-      "budget": "456",
+      "name": "projeto 50000",
+      "budget": "2500",
       "category": {
         "id": "4",
         "name": "Planejamento"
@@ -13,7 +13,7 @@
     },
     {
       "name": "meu projeto 3",
-      "budget": "15000000",
+      "budget": "1500",
       "category": {
         "id": "3",
         "name": "Design"
