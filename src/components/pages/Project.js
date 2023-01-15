@@ -1,4 +1,4 @@
-import {parse ,v4 as uuidv4} from 'uuid'
+import {parse,v4 as uuidv4} from 'uuid'
 import {  useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Loading from '../layout/Loading'
@@ -59,7 +59,7 @@ function Project(){
       .then((data) =>{
 
         setProject(data)
-        setShowProjectForm(false)
+        setShowProjectForm(!showProjectForm)
         setMessage('Projeto atualizado')
         setType('success')
       } )
@@ -67,7 +67,7 @@ function Project(){
     }
 
         function createService(project){
-            setMessage('')
+            
 
 
             const lastService = project.services[project.services.length -1]
@@ -75,7 +75,8 @@ function Project(){
             lastService.id = uuidv4()
 
             const lastServiceCost = lastService.cost
-            const newCost = parseFloat(project.cost) + (lastServiceCost)
+
+            const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
 
             //maximum value validation
             if(newCost > parseFloat(project.budget)){
@@ -86,23 +87,51 @@ function Project(){
             }
             //add service cost to project total cost
             project.cost = newCost
+            
             // update project
-            fetch(`http://localhost:5000/project${project.id}`,{
+            fetch(`http://localhost:5000/projects/${project.id}`,{
                 method:'PATCH',
                 headers:{
-                    'Context-Type': 'application/json',
+                    'Content-Type': 'application/json',
 
                 },
                 body: JSON.stringify(project),
             })
             .then((resp) => resp.json())
             .then((data) => {
-                setShowProjectForm(false)
+                setServices(data.services)
+                setShowServiceForm(!showServiceForm)
+                setMessage('Serviço adicionado!')
+                setType('success')
             })
             .catch((err) => console.log(err))
 
         }
-       function removeService(){
+       function removeService(id, cost){
+
+        const servicesUpdated = project.services.filter(
+                (service) => service.id !== id,
+            )
+                const projectUpdated = project
+
+                projectUpdated.services = servicesUpdated
+                projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
+
+                fetch(`http://localhost:5000/projects/${projectUpdated.id}`,{
+                    method:'PATCH',
+                    headers:{
+                        'Content-Type':'application/json'
+                    },
+                    body: JSON.stringify(projectUpdated),
+                })
+                .then((resp)=>resp.json())
+                .then((data)=>{
+                    setProject(projectUpdated)
+                    setServices(servicesUpdated)
+                    setMessage('Serviço removido com sucesso!')
+
+                })
+                .catch((err)=> console.log(err))
 
        }
 
@@ -117,7 +146,8 @@ function Project(){
         }
 
     return(
-        <> {project.name ? (
+        <> 
+        {project.name ? (
         
             <div className={styles.project_details}>
                 <Container customClass='column'>
@@ -157,11 +187,9 @@ function Project(){
                             handleSubmit={createService}
                             btnText='Adicionar Serviço'
                             projectData={project}
+                            />
                             
-                            
-                            
-                            />)
-                            }
+                            )}
                         </div>
                     </div>
                     <h2>Serviços</h2>
@@ -190,9 +218,7 @@ function Project(){
 
         )}
       </>
-        
-    )
-
-}
+                
+    )}
 
 export default Project

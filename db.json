@@ -7,8 +7,21 @@
         "id": "4",
         "name": "Planejamento"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 466,
+      "services": [
+        {
+          "name": "wtwert",
+          "cost": "343",
+          "description": "ewqrw",
+          "id": "0a0c790a-44e3-440c-b99c-4fd280543574"
+        },
+        {
+          "name": "amazon",
+          "cost": "123",
+          "description": "fgwergtwertwt",
+          "id": "f73d6c20-4878-4b07-9d5f-89ec9c96dca0"
+        }
+      ],
       "id": 4
     },
     {
@@ -40,8 +53,15 @@
         "name": "Desenvolvimento"
       },
       "budget": "45677",
-      "cost": 0,
-      "services": [],
+      "cost": "05999",
+      "services": [
+        {
+          "name": "amazon",
+          "cost": "5999",
+          "description": "fgwergtwertwt",
+          "id": "445a6328-2812-4ce6-b5f1-f9b0f655ccc2"
+        }
+      ],
       "id": 10
     },
     {
