@@ -1,50 +1,22 @@
 {
   "projects": [
     {
-      "name": "projeto 50000",
-      "budget": "2500",
+      "name": "meu projeto 6000",
+      "budget": "4000",
       "category": {
-        "id": "4",
-        "name": "Planejamento"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
-      "cost": 466,
+      "cost": 3500,
       "services": [
         {
-          "name": "wtwert",
-          "cost": "343",
-          "description": "ewqrw",
-          "id": "0a0c790a-44e3-440c-b99c-4fd280543574"
-        },
-        {
-          "name": "amazon",
-          "cost": "123",
-          "description": "fgwergtwertwt",
-          "id": "f73d6c20-4878-4b07-9d5f-89ec9c96dca0"
+          "name": "Contratar Davi",
+          "cost": "3500",
+          "description": "chamar o melhor programador kkkk",
+          "id": "df1dfa1f-5d83-410c-b119-2fdd4a7b2d42"
         }
       ],
-      "id": 4
-    },
-    {
-      "name": "meu projeto 3",
-      "budget": "1497",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 0,
-      "services": [],
       "id": 6
-    },
-    {
-      "name": "Davi Gledson da Silva Benedito",
-      "budget": "12312",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 8
     },
     {
       "name": "tripadivisordavi.erdplus",
@@ -65,17 +37,6 @@
       "id": 10
     },
     {
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "name": "Davi Gledson da Silva Benedito",
-      "budget": "46456",
-      "cost": 0,
-      "services": [],
-      "id": 12
-    },
-    {
       "name": "amazon",
       "category": {
         "id": "1",
@@ -87,17 +48,6 @@
       "id": 14
     },
     {
-      "name": "amazon",
-      "budget": "23423",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 15
-    },
-    {
       "name": "teste3000",
       "budget": "3333",
       "category": {
@@ -107,6 +57,39 @@
       "cost": 0,
       "services": [],
       "id": 16
+    },
+    {
+      "name": "site da amazon",
+      "budget": "200000",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 17
+    },
+    {
+      "name": "projeto 5000",
+      "budget": "20000",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 18
+    },
+    {
+      "name": "projeto 5000",
+      "budget": "50000",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 19
     }
   ],
   "categories": [
